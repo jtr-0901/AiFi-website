@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from 'react';
+import { useAnimation } from '../context/AnimationContext';
 
 const Background = () => {
     const canvasRef = useRef(null);
+    const { isWarping } = useAnimation();
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -30,10 +32,17 @@ const Background = () => {
                 this.flickerSpeed = Math.random() * 0.02 + 0.005;
             }
 
-            update() {
-                this.opacity += this.flickerSpeed;
-                if (this.opacity > 1 || this.opacity < 0.2) {
-                    this.flickerSpeed *= -1; // Reverse fading
+            update(isWarping) {
+                // Warp effect
+                if (isWarping) {
+                    this.x -= 20; // Move stars fast to verify left
+                    if (this.x < 0) this.x = width;
+                    this.opacity = 1; // Brighten up
+                } else {
+                    this.opacity += this.flickerSpeed;
+                    if (this.opacity > 1 || this.opacity < 0.2) {
+                        this.flickerSpeed *= -1; // Reverse fading
+                    }
                 }
             }
 
@@ -56,9 +65,15 @@ const Background = () => {
                 this.color = '#00f2ff'; // Cyan
             }
 
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
+            update(isWarping) {
+                if (isWarping) {
+                    // Warp speed
+                    this.x += this.vx * 20;
+                    this.y += this.vy * 20;
+                } else {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                }
 
                 if (this.x < 0 || this.x > width) this.vx *= -1;
                 if (this.y < 0 || this.y > height) this.vy *= -1;
@@ -179,13 +194,13 @@ const Background = () => {
 
             // 2. Draw Background Stars
             stars.forEach(star => {
-                star.update();
+                star.update(isWarping);
                 star.draw();
             });
 
             // 3. Draw Network
             networkParticles.forEach(particle => {
-                particle.update();
+                particle.update(isWarping);
                 particle.draw();
             });
 
@@ -216,7 +231,7 @@ const Background = () => {
             window.removeEventListener('mouseleave', handleMouseLeave);
             cancelAnimationFrame(animationFrameId);
         };
-    }, []);
+    }, [isWarping]);
 
     return (
         <canvas

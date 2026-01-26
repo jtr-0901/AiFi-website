@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useAnimation } from '../context/AnimationContext';
 
 const Hero = () => {
+    const { triggerWarp } = useAnimation();
     return (
         <section style={{
             height: '100vh',
@@ -60,10 +62,13 @@ const Hero = () => {
                 </p>
                 <button
                     onClick={() => {
-                        const element = document.getElementById('upcoming-events');
-                        if (element) {
-                            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
+                        triggerWarp();
+                        setTimeout(() => {
+                            const element = document.getElementById('upcoming-events');
+                            if (element) {
+                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                        }, 1500);
                     }}
                     style={{
                         background: 'var(--primary-cyan)',
