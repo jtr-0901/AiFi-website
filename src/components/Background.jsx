@@ -11,6 +11,7 @@ const Background = () => {
         let animationFrameId;
 
         let width, height;
+        let cx, cy;
         let mouse = { x: null, y: null, radius: 150 };
 
         // Configuration
@@ -22,35 +23,58 @@ const Background = () => {
         const networkParticles = [];
         const stars = [];
 
-        // Background Twinkling Star Class
+        // Background Star Class (3D)
         class Star {
             constructor() {
-                this.x = Math.random() * width;
-                this.y = Math.random() * height;
-                this.size = Math.random() * 1.5;
-                this.opacity = Math.random();
-                this.flickerSpeed = Math.random() * 0.02 + 0.005;
+                this.x = (Math.random() - 0.5) * width * 2; // Spread wider
+                this.y = (Math.random() - 0.5) * height * 2;
+                this.z = Math.random() * width; // Depth
+                this.pz = this.z; // Previous z for trails
+                this.size = 0;
             }
 
             update(isWarping) {
-                // Warp effect
-                if (isWarping) {
-                    this.x -= 20; // Move stars fast to verify left
-                    if (this.x < 0) this.x = width;
-                    this.opacity = 1; // Brighten up
-                } else {
-                    this.opacity += this.flickerSpeed;
-                    if (this.opacity > 1 || this.opacity < 0.2) {
-                        this.flickerSpeed *= -1; // Reverse fading
-                    }
+                this.pz = this.z;
+
+                let speed = isWarping ? 80 : 2; // Warp speed vs Idle speed
+                this.z -= speed;
+
+                // Reset if passed camera
+                if (this.z < 1) {
+                    this.z = width;
+                    this.pz = this.z;
+                    this.x = (Math.random() - 0.5) * width * 2;
+                    this.y = (Math.random() - 0.5) * height * 2;
                 }
             }
 
-            draw() {
-                ctx.fillStyle = `rgba(255, 255, 255, ${Math.abs(this.opacity)})`;
+            draw(isWarping) {
+                // Perspective projection
+                let sx = (this.x / this.z) * width + cx;
+                let sy = (this.y / this.z) * height + cy;
+
+                let r = (1 - this.z / width) * 4; // Size based on proximity
+
+                if (sx < 0 || sx > width || sy < 0 || sy > height) return;
+
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
+                ctx.fillStyle = isWarping ? '#00f2ff' : 'white';
+
+                if (isWarping) {
+                    // Draw Streak
+                    let px = (this.x / this.pz) * width + cx;
+                    let py = (this.y / this.pz) * height + cy;
+
+                    ctx.strokeStyle = '#00f2ff';
+                    ctx.lineWidth = r;
+                    ctx.moveTo(px, py);
+                    ctx.lineTo(sx, sy);
+                    ctx.stroke();
+                } else {
+                    // Draw Dot
+                    ctx.arc(sx, sy, r, 0, Math.PI * 2);
+                    ctx.fill();
+                }
             }
         }
 
@@ -63,14 +87,17 @@ const Background = () => {
                 this.vy = (Math.random() - 0.5) * 0.8;
                 this.size = Math.random() * 2 + 1.5;
                 this.color = '#00f2ff'; // Cyan
+                this.opacity = 1;
             }
 
             update(isWarping) {
                 if (isWarping) {
-                    // Warp speed
-                    this.x += this.vx * 20;
-                    this.y += this.vy * 20;
+                    this.opacity -= 0.1;
+                    if (this.opacity < 0) this.opacity = 0;
                 } else {
+                    this.opacity += 0.1;
+                    if (this.opacity > 1) this.opacity = 1;
+
                     this.x += this.vx;
                     this.y += this.vy;
                 }
@@ -99,9 +126,10 @@ const Background = () => {
             }
 
             draw() {
+                if (this.opacity <= 0) return;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = this.color;
+                ctx.fillStyle = `rgba(0, 242, 255, ${this.opacity})`;
                 ctx.fill();
             }
         }
@@ -109,6 +137,8 @@ const Background = () => {
         const init = () => {
             width = window.innerWidth;
             height = window.innerHeight;
+            cx = width / 2;
+            cy = height / 2;
             canvas.width = width;
             canvas.height = height;
 
@@ -192,10 +222,10 @@ const Background = () => {
             // 1. Draw Base (Milky Way / Nebula)
             drawMilkyWay();
 
-            // 2. Draw Background Stars
+            // 2. Draw Background Stars (Hyperspace)
             stars.forEach(star => {
                 star.update(isWarping);
-                star.draw();
+                star.draw(isWarping);
             });
 
             // 3. Draw Network
