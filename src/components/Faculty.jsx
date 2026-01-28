@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { User } from 'lucide-react';
+import drRashmiImage from '../assets/dr-rashmi.jpg';
 
 const Faculty = () => {
     return (
@@ -34,9 +34,17 @@ const Faculty = () => {
                     marginBottom: '1.5rem',
                     overflow: 'hidden'
                 }}>
-                    <User size={80} color="var(--primary-cyan)" />
+                    <img
+                        src={drRashmiImage}
+                        alt="Dr. Rashmi C"
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover'
+                        }}
+                    />
                 </div>
-                <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Prof. Name Here</h3>
+                <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Dr. Rashmi C</h3>
                 <p style={{ color: 'var(--primary-cyan)', marginBottom: '1rem' }}>Faculty Coordinator - AIFi</p>
                 <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem' }}>
                     School of Computer Science & Engineering<br />
