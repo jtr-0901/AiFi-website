@@ -40,7 +40,8 @@ const HackathonRegistration = () => {
                     ...formData,
                     members: formData.members.map(m => ({
                         ...m,
-                        college: m.college === 'Other' ? m.customCollege : m.college
+                        college: m.college === 'Other' ? m.customCollege : m.college,
+                        branch: m.branch === 'Other' ? m.customBranch : m.branch
                     }))
                 })
             });
@@ -171,18 +172,35 @@ const HackathonRegistration = () => {
                                             <option value="3" style={{ color: '#000' }}>3rd Year</option>
                                             <option value="4" style={{ color: '#000' }}>4th Year</option>
                                         </select>
-                                        <select
-                                            value={member.branch}
-                                            onChange={(e) => handleMemberChange(index, 'branch', e.target.value)}
-                                            style={{ padding: '10px', borderRadius: '5px', border: 'none', background: 'rgba(255,255,255,0.1)', color: '#fff' }}
-                                        >
-                                            <option value="" style={{ color: '#000' }}>Select Branch</option>
-                                            <option value="CSE" style={{ color: '#000' }}>CSE</option>
-                                            <option value="AI&DS" style={{ color: '#000' }}>AI & DS</option>
-                                            <option value="ISE" style={{ color: '#000' }}>ISE</option>
-                                            <option value="ECE" style={{ color: '#000' }}>ECE</option>
-                                            <option value="Other" style={{ color: '#000' }}>Other</option>
-                                        </select>
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                                            <select
+                                                value={member.branch}
+                                                onChange={(e) => handleMemberChange(index, 'branch', e.target.value)}
+                                                style={{ padding: '10px', borderRadius: '5px', border: 'none', background: 'rgba(255,255,255,0.1)', color: '#fff', width: '100%' }}
+                                            >
+                                                <option value="" style={{ color: '#000' }}>Select Branch</option>
+                                                <option value="CSE" style={{ color: '#000' }}>CSE</option>
+                                                <option value="AI&DS" style={{ color: '#000' }}>AI & DS</option>
+                                                <option value="AI&ML" style={{ color: '#000' }}>AI & ML</option>
+                                                <option value="ISE" style={{ color: '#000' }}>ISE</option>
+                                                <option value="ECE" style={{ color: '#000' }}>ECE</option>
+                                                <option value="EEE" style={{ color: '#000' }}>EEE</option>
+                                                <option value="Mechanical" style={{ color: '#000' }}>Mechanical</option>
+                                                <option value="Civil" style={{ color: '#000' }}>Civil</option>
+                                                <option value="Bio-Tech" style={{ color: '#000' }}>Bio-Tech</option>
+                                                <option value="Robotics" style={{ color: '#000' }}>Robotics</option>
+                                                <option value="Aerospace" style={{ color: '#000' }}>Aerospace</option>
+                                                <option value="Other" style={{ color: '#000' }}>Other</option>
+                                            </select>
+                                            {member.branch === 'Other' && (
+                                                <input
+                                                    placeholder="Enter Branch Name"
+                                                    value={member.customBranch || ''}
+                                                    onChange={(e) => handleMemberChange(index, 'customBranch', e.target.value)}
+                                                    style={{ padding: '10px', borderRadius: '5px', border: 'none', background: 'rgba(255,255,255,0.1)', color: '#fff', width: '100%' }}
+                                                />
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                             ))}

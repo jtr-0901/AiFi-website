@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
-const MasterclassRegistration = () => {
+const GFGRegistration = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: '',
         college: '',
         year: '',
-        branch: ''
+        branch: '',
+        phone: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -17,7 +18,7 @@ const MasterclassRegistration = () => {
         setIsSubmitting(true);
 
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/register-masterclass`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/register-gfg`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -54,7 +55,7 @@ const MasterclassRegistration = () => {
                 style={{ width: '90%', maxWidth: '500px', padding: '2rem', height: 'fit-content' }}
             >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
-                    <h2 className="text-gradient">Masterclass Registration</h2>
+                    <h2 className="text-gradient">GFG Contest Registration</h2>
                     <button onClick={() => navigate('/')} style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer' }}>Close</button>
                 </div>
 
@@ -104,7 +105,7 @@ const MasterclassRegistration = () => {
                             <option value="4" style={{ color: '#000' }}>4th Year</option>
                         </select>
                     </div>
-                    <div style={{ marginBottom: '2rem' }}>
+                    <div style={{ marginBottom: '1rem' }}>
                         <label style={{ display: 'block', marginBottom: '0.5rem' }}>Branch</label>
                         <select
                             required
@@ -135,13 +136,24 @@ const MasterclassRegistration = () => {
                             />
                         )}
                     </div>
+                    <div style={{ marginBottom: '2rem' }}>
+                        <label style={{ display: 'block', marginBottom: '0.5rem' }}>Phone Number</label>
+                        <input
+                            required
+                            type="tel"
+                            value={formData.phone}
+                            onChange={(e) => handleChange('phone', e.target.value)}
+                            placeholder="+91 XXXXXXXXXX"
+                            style={{ width: '100%', padding: '10px', borderRadius: '5px', border: 'none', background: 'rgba(255,255,255,0.1)', color: '#fff' }}
+                        />
+                    </div>
 
                     <button
                         type="submit"
                         disabled={isSubmitting}
                         style={{
                             width: '100%',
-                            background: 'var(--secondary-purple)',
+                            background: '#2f8d46',
                             color: '#fff',
                             border: 'none',
                             padding: '12px',
@@ -158,4 +170,4 @@ const MasterclassRegistration = () => {
     );
 };
 
-export default MasterclassRegistration;
+export default GFGRegistration;
