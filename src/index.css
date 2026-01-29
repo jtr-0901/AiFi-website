@@ -11,7 +11,21 @@
   --glow-cyan: 0 0 20px rgba(0, 242, 255, 0.5);
   --glow-text: 0 0 10px rgba(0, 242, 255, 0.3);
 
+  --section-padding: 4rem 2rem;
+  --heading-size-lg: 3rem;
+  --heading-size-md: 2.5rem;
+  --card-padding: 2rem;
+
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 2rem 1rem;
+    --heading-size-lg: 2rem;
+    --heading-size-md: 1.8rem;
+    --card-padding: 1.5rem;
+  }
 }
 
 body {
@@ -45,6 +59,7 @@ body {
   border: 1px solid var(--glass-border);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  padding: var(--card-padding);
 }
 
 .text-gradient {
@@ -62,3 +77,25 @@ body {
   border-color: var(--primary-cyan);
   box-shadow: var(--glow-cyan);
 }
+
+.section-container {
+  padding: var(--section-padding);
+  text-align: center;
+}
+
+.heading-lg {
+  font-size: var(--heading-size-lg);
+  margin-bottom: 2rem;
+}
+
+.heading-md {
+  font-size: var(--heading-size-md);
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 480px) {
+  .glass-card {
+    padding: 1rem;
+  }
+}
+
