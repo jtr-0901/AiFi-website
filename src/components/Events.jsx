@@ -53,7 +53,7 @@ const Events = () => {
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', justifyContent: 'flex-start' }}>
                             {/* Inaugural Event */}
                             <div style={{ flex: '1 1 250px', textAlign: 'left' }}>
-                                <h5 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#fff' }}>Inaugural Ceremony</h5>
+                                <h5 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#fff' }}>Event 1: Inaugural Ceremony</h5>
                                 <p style={{ color: '#aaa', marginBottom: '0.5rem', fontSize: '0.9rem' }}>⏰ 10:30 AM - 1:00 PM</p>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#e0e0e0', fontSize: '0.85rem' }}>
                                     <MapPin size={14} color="var(--secondary-purple)" />
@@ -64,7 +64,7 @@ const Events = () => {
                             {/* GFG Contest */}
                             <div style={{ flex: '1 1 250px', textAlign: 'left' }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
-                                    <h5 style={{ fontSize: '1.2rem', margin: 0, color: '#fff' }}>GFG Coding Contest</h5>
+                                    <h5 style={{ fontSize: '1.2rem', margin: 0, color: '#fff' }}>Event 2: GeeksForGeeks Coding Contest</h5>
                                     <img
                                         src="/gfg-logo.jpg"
                                         alt="GFG Logo"
@@ -110,7 +110,7 @@ const Events = () => {
                         </div>
 
                         <div style={{ textAlign: 'left', marginBottom: '1.5rem' }}>
-                            <h5 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#fff' }}>AI National Level Hackathon</h5>
+                            <h5 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#fff' }}>Event 3: AI National level Hackethon</h5>
                             <p style={{ color: '#aaa', marginBottom: '0.5rem', fontSize: '0.9rem' }}>⏰ Day 2, 9:00 AM → Day 3, 9:00 AM (24 Hours)</p>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#e0e0e0', marginBottom: '1rem', fontSize: '0.85rem' }}>
                                 <MapPin size={14} color="var(--secondary-purple)" />
@@ -158,11 +158,10 @@ const Events = () => {
                         </div>
 
                         <div style={{ textAlign: 'left', marginBottom: '1.5rem' }}>
-                            <h5 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#fff' }}>AI Masterclass</h5>
+                            <h5 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#fff' }}>Event 4: AI Masterclass</h5>
                             <p style={{ fontSize: '1rem', color: 'var(--secondary-purple)', marginBottom: '0.5rem' }}>
-                                collaboration with <strong>AiFi × GDG × OS Code</strong>
+                                <strong>GDG X AiFi X Os Code</strong>
                             </p>
-                            <p style={{ color: '#aaa', marginBottom: '1rem', fontSize: '0.9rem' }}>⏰ 9:00 AM to 4:00 PM</p>
                             <p style={{ color: '#ddd', lineHeight: '1.4', fontSize: '0.9rem' }}>
                                 Deep dive into Generative AI and Transformers with industry experts. Learn cutting-edge techniques and best practices.
                             </p>
