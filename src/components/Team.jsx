@@ -69,15 +69,15 @@ const Team = () => {
     ];
 
     return (
-        <section style={{ padding: '4rem 2rem', textAlign: 'center' }}>
-            <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '3rem' }}>
+        <section className="section-container">
+            <h2 className="text-gradient heading-md">
                 Core Team
             </h2>
             <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-                gap: '2rem',
-                maxWidth: '1000px',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(250px, 100%), 1fr))',
+                gap: '1.5rem',
+                maxWidth: '1200px',
                 margin: '0 auto',
                 marginBottom: '4rem'
             }}>
@@ -88,7 +88,7 @@ const Team = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3, delay: index * 0.1 }}
-                        style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+                        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
                     >
                         <div style={{
                             width: '150px',
@@ -124,7 +124,7 @@ const Team = () => {
 
             {/* Technical Team Coordinators - Horizontal Scroll */}
             <div style={{ marginTop: '3rem' }}>
-                <h3 className="text-gradient" style={{ fontSize: '2rem', marginBottom: '2rem' }}>
+                <h3 className="text-gradient" style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>
                     Technical Team Coordinators
                 </h3>
                 <div style={{
@@ -133,13 +133,13 @@ const Team = () => {
                     scrollBehavior: 'smooth',
                     WebkitOverflowScrolling: 'touch',
                     padding: '1rem 0',
-                    margin: '0 -2rem',
-                    paddingLeft: '2rem',
-                    paddingRight: '2rem'
+                    margin: '0 -1rem',
+                    paddingLeft: '1rem',
+                    paddingRight: '1rem'
                 }}>
                     <div style={{
                         display: 'flex',
-                        gap: '2rem',
+                        gap: '1.5rem',
                         minWidth: 'min-content'
                     }}>
                         {technicalCoordinators.map((coordinator, index) => (
@@ -150,11 +150,10 @@ const Team = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.3, delay: index * 0.1 }}
                                 style={{
-                                    padding: '2rem',
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'center',
-                                    minWidth: '250px',
+                                    minWidth: 'min(250px, 70vw)',
                                     flexShrink: 0
                                 }}
                             >
@@ -190,7 +189,7 @@ const Team = () => {
 
             {/* Media and Design Coordinators - Horizontal Scroll */}
             <div style={{ marginTop: '3rem' }}>
-                <h3 className="text-gradient" style={{ fontSize: '2rem', marginBottom: '2rem' }}>
+                <h3 className="text-gradient" style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>
                     Media and Design Coordinators
                 </h3>
                 <div style={{
@@ -199,13 +198,13 @@ const Team = () => {
                     scrollBehavior: 'smooth',
                     WebkitOverflowScrolling: 'touch',
                     padding: '1rem 0',
-                    margin: '0 -2rem',
-                    paddingLeft: '2rem',
-                    paddingRight: '2rem'
+                    margin: '0 -1rem',
+                    paddingLeft: '1rem',
+                    paddingRight: '1rem'
                 }}>
                     <div style={{
                         display: 'flex',
-                        gap: '2rem',
+                        gap: '1.5rem',
                         minWidth: 'min-content'
                     }}>
                         {mediaDesignCoordinators.map((coordinator, index) => (
@@ -216,11 +215,10 @@ const Team = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.3, delay: index * 0.1 }}
                                 style={{
-                                    padding: '2rem',
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'center',
-                                    minWidth: '250px',
+                                    minWidth: 'min(250px, 70vw)',
                                     flexShrink: 0
                                 }}
                             >
@@ -256,7 +254,7 @@ const Team = () => {
 
             {/* PR and Marketing Coordinators - Horizontal Scroll */}
             <div style={{ marginTop: '3rem' }}>
-                <h3 className="text-gradient" style={{ fontSize: '2rem', marginBottom: '2rem' }}>
+                <h3 className="text-gradient" style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>
                     PR and Marketing Coordinators
                 </h3>
                 <div style={{
@@ -265,13 +263,13 @@ const Team = () => {
                     scrollBehavior: 'smooth',
                     WebkitOverflowScrolling: 'touch',
                     padding: '1rem 0',
-                    margin: '0 -2rem',
-                    paddingLeft: '2rem',
-                    paddingRight: '2rem'
+                    margin: '0 -1rem',
+                    paddingLeft: '1rem',
+                    paddingRight: '1rem'
                 }}>
                     <div style={{
                         display: 'flex',
-                        gap: '2rem',
+                        gap: '1.5rem',
                         minWidth: 'min-content'
                     }}>
                         {prMarketingCoordinators.map((coordinator, index) => (
@@ -282,11 +280,10 @@ const Team = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.3, delay: index * 0.1 }}
                                 style={{
-                                    padding: '2rem',
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'center',
-                                    minWidth: '250px',
+                                    minWidth: 'min(250px, 70vw)',
                                     flexShrink: 0
                                 }}
                             >
@@ -322,7 +319,7 @@ const Team = () => {
 
             {/* Event Management Coordinators - Horizontal Scroll */}
             <div style={{ marginTop: '3rem' }}>
-                <h3 className="text-gradient" style={{ fontSize: '2rem', marginBottom: '2rem' }}>
+                <h3 className="text-gradient" style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>
                     Event Management Coordinators
                 </h3>
                 <div style={{
@@ -331,13 +328,13 @@ const Team = () => {
                     scrollBehavior: 'smooth',
                     WebkitOverflowScrolling: 'touch',
                     padding: '1rem 0',
-                    margin: '0 -2rem',
-                    paddingLeft: '2rem',
-                    paddingRight: '2rem'
+                    margin: '0 -1rem',
+                    paddingLeft: '1rem',
+                    paddingRight: '1rem'
                 }}>
                     <div style={{
                         display: 'flex',
-                        gap: '2rem',
+                        gap: '1.5rem',
                         minWidth: 'min-content'
                     }}>
                         {eventManagementCoordinators.map((coordinator, index) => (
@@ -348,11 +345,10 @@ const Team = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.3, delay: index * 0.1 }}
                                 style={{
-                                    padding: '2rem',
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'center',
-                                    minWidth: '250px',
+                                    minWidth: 'min(250px, 70vw)',
                                     flexShrink: 0
                                 }}
                             >
