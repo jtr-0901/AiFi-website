@@ -19,15 +19,21 @@ const Navbar = () => {
 
     const scrollToSection = (id) => {
         setIsOpen(false);
+        const scroll = () => {
+            const element = document.getElementById(id);
+            if (element) {
+                const yOffset = -80;
+                const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }
+        };
+
         if (location.pathname !== '/') {
             navigate('/');
-            setTimeout(() => {
-                const element = document.getElementById(id);
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
+            setTimeout(scroll, 100);
         } else {
-            const element = document.getElementById(id);
-            if (element) element.scrollIntoView({ behavior: 'smooth' });
+            // Small delay to ensure menu closing doesn't conflict with scroll on mobile
+            setTimeout(scroll, 100);
         }
     };
 
@@ -59,7 +65,7 @@ const Navbar = () => {
                     style={{ fontSize: '1.5rem', cursor: 'pointer', margin: 0 }}
                     onClick={() => scrollToSection('home')}
                 >
-                    AIFi
+                    AiFi
                 </h1>
 
                 {/* Desktop Menu */}
@@ -107,18 +113,20 @@ const Navbar = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
                         style={{
-                            background: 'rgba(0, 0, 0, 0.95)',
-                            backdropFilter: 'blur(10px)',
+                            background: 'rgba(5, 5, 16, 0.98)',
+                            backdropFilter: 'blur(15px)',
                             overflow: 'hidden',
                             position: 'absolute',
                             top: '100%',
                             left: 0,
                             right: 0,
-                            borderBottom: '1px solid rgba(255,255,255,0.1)'
+                            borderBottom: '1px solid rgba(255,255,255,0.1)',
+                            boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
                         }}
                     >
-                        <div style={{ display: 'flex', flexDirection: 'column', padding: '1rem', gap: '1rem' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', padding: '1.5rem', gap: '1.5rem' }}>
                             {navLinks.map((link) => (
                                 <button
                                     key={link.name}
@@ -128,9 +136,11 @@ const Navbar = () => {
                                         border: 'none',
                                         color: '#fff',
                                         cursor: 'pointer',
-                                        fontSize: '1.1rem',
-                                        textAlign: 'left',
-                                        padding: '0.5rem'
+                                        fontSize: '1.2rem',
+                                        textAlign: 'center',
+                                        padding: '0.8rem',
+                                        borderBottom: '1px solid rgba(255,255,255,0.05)',
+                                        width: '100%'
                                     }}
                                 >
                                     {link.name}

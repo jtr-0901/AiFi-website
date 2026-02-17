@@ -20,7 +20,7 @@ const Hero = () => {
                 transition={{ duration: 0.8 }}
             >
                 <h1 className="text-gradient" style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-                    AIFi – THE AIML CLUB
+                    AiFi – THE AIML CLUB
                 </h1>
                 <p style={{ color: 'var(--text-dim)', fontSize: '1.2rem', marginBottom: '2rem' }}>
                     SCHOOL OF COMPUTER SCIENCE AND ENGINEERING<br />
@@ -63,12 +63,10 @@ const Hero = () => {
                 <button
                     onClick={() => {
                         triggerWarp();
-                        setTimeout(() => {
-                            const element = document.getElementById('upcoming-events');
-                            if (element) {
-                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                            }
-                        }, 1500);
+                        const element = document.getElementById('upcoming-events');
+                        if (element) {
+                            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
                     }}
                     style={{
                         background: 'var(--primary-cyan)',

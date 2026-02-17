@@ -5,7 +5,7 @@ const About = () => {
     return (
         <section className="section-container">
             <h2 className="text-gradient heading-md">
-                About AIFi
+                About AiFi
             </h2>
             <div style={{
                 display: 'flex',

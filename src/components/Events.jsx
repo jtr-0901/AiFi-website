@@ -28,6 +28,16 @@ const Events = () => {
                     <Zap size={40} color="var(--primary-cyan)" style={{ filter: 'drop-shadow(0 0 10px var(--primary-cyan))' }} />
                     <h3 style={{ fontSize: 'min(3.5rem, 10vw)', marginTop: '1rem', marginBottom: '0.5rem', color: '#fff' }}>AI-RENA 2.0</h3>
                     <p style={{ fontSize: '1.2rem', color: 'var(--primary-cyan)' }}>National Level AI Event Series</p>
+
+                    <div style={{ marginTop: '1.5rem', color: '#ddd' }}>
+                        <h4 style={{ color: 'var(--primary-cyan)', marginBottom: '0.5rem' }}>Hackathon Timeline</h4>
+
+                        <ul style={{ lineHeight: '1.8', paddingLeft: '1.2rem' }}>
+
+                            <li>2 Mar – Registrations Close</li>
+                            <li>4 Mar – Top 60 Teams Revealed</li>
+                        </ul>
+                    </div>
                 </div>
 
                 {/* Event Timeline - 3 Boxes */}
@@ -53,8 +63,8 @@ const Events = () => {
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', justifyContent: 'flex-start' }}>
                             {/* Inaugural Event */}
                             <div style={{ flex: '1 1 250px', textAlign: 'left' }}>
-                                <h5 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#fff' }}>Event 1: Inaugural Ceremony</h5>
-                                <p style={{ color: '#aaa', marginBottom: '0.5rem', fontSize: '0.9rem' }}>⏰ 10:30 AM - 1:00 PM</p>
+                                <h5 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#fff' }}>Inaugural Ceremony</h5>
+                                <p style={{ color: '#aaa', marginBottom: '0.5rem', fontSize: '0.9rem' }}>⏰ 9:30 AM</p>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#e0e0e0', fontSize: '0.85rem' }}>
                                     <MapPin size={14} color="var(--secondary-purple)" />
                                     <span>Kuvempu Auditorium, REVA</span>
@@ -64,16 +74,16 @@ const Events = () => {
                             {/* GFG Contest */}
                             <div style={{ flex: '1 1 250px', textAlign: 'left' }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
-                                    <h5 style={{ fontSize: '1.2rem', margin: 0, color: '#fff' }}>Event 2: GeeksForGeeks Coding Contest</h5>
+                                    <h5 style={{ fontSize: '1.2rem', margin: 0, color: '#fff' }}>GFG Coding Contest</h5>
                                     <img
                                         src="/gfg-logo.jpg"
                                         alt="GFG Logo"
                                         style={{ height: '30px', width: 'auto', objectFit: 'contain' }}
                                     />
                                 </div>
-                                <p style={{ color: '#aaa', marginBottom: '1rem', fontSize: '0.9rem' }}>⏰ 2:00 PM - 4:00 PM</p>
+                                <p style={{ color: '#aaa', marginBottom: '1rem', fontSize: '0.9rem' }}>⏰ 1:30 PM</p>
                                 <button
-                                    onClick={() => navigate('/register/gfg')}
+                                    onClick={() => window.open('https://forms.gle/kbMT2hrcMA3ukb93A', '_blank')}
                                     style={{
                                         background: '#2f8d46',
                                         color: '#fff',
@@ -110,19 +120,19 @@ const Events = () => {
                         </div>
 
                         <div style={{ textAlign: 'left', marginBottom: '1.5rem' }}>
-                            <h5 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#fff' }}>Event 3: AI National level Hackethon</h5>
+                            <h5 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#fff' }}>AI National Level Hackathon</h5>
                             <p style={{ color: '#aaa', marginBottom: '0.5rem', fontSize: '0.9rem' }}>⏰ Day 2, 9:00 AM → Day 3, 9:00 AM (24 Hours)</p>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#e0e0e0', marginBottom: '1rem', fontSize: '0.85rem' }}>
                                 <MapPin size={14} color="var(--secondary-purple)" />
                                 <span>REVA Rangasthala</span>
                             </div>
                             <p style={{ color: '#ddd', lineHeight: '1.4', fontSize: '0.9rem' }}>
-                                Challenge yourself in a 24-hour logic-building marathon. Build innovative AI solutions and compete with the best minds.
+                                Deep dive into Generative AI and Transformers with industry experts. Learn cutting-edge techniques and best practices.
                             </p>
                         </div>
 
                         <button
-                            onClick={() => navigate('/register/hackathon')}
+                            onClick={() => window.open('https://forms.gle/pS5K8RBCMdr5eaxT7', '_blank')}
                             style={{
                                 background: 'var(--primary-cyan)',
                                 color: 'var(--bg-space)',
@@ -158,17 +168,22 @@ const Events = () => {
                         </div>
 
                         <div style={{ textAlign: 'left', marginBottom: '1.5rem' }}>
-                            <h5 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#fff' }}>Event 4: AI Masterclass</h5>
+                            <h5 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#fff' }}>AI Masterclass</h5>
                             <p style={{ fontSize: '1rem', color: 'var(--secondary-purple)', marginBottom: '0.5rem' }}>
-                                <strong>GDG X AiFi X Os Code</strong>
+                                collaboration with <strong>AiFi × GDG × OS Code</strong>
                             </p>
+                            <p style={{ color: '#aaa', marginBottom: '1rem', fontSize: '0.9rem' }}>⏰ Timings will be announced soon</p>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#e0e0e0', marginBottom: '1rem', fontSize: '0.85rem' }}>
+                                <MapPin size={14} color="var(--secondary-purple)" />
+                                <span>Justice Hegde Seminar Hall</span>
+                            </div>
                             <p style={{ color: '#ddd', lineHeight: '1.4', fontSize: '0.9rem' }}>
                                 Deep dive into Generative AI and Transformers with industry experts. Learn cutting-edge techniques and best practices.
                             </p>
                         </div>
 
                         <button
-                            onClick={() => navigate('/register/masterclass')}
+                            onClick={() => window.open('https://forms.gle/ZEjBHMzozY2HTV388', '_blank')}
                             style={{
                                 background: 'transparent',
                                 border: '2px solid var(--secondary-purple)',
