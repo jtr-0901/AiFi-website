@@ -169,9 +169,6 @@ const Events = () => {
 
                         <div style={{ textAlign: 'left', marginBottom: '1.5rem' }}>
                             <h5 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#fff' }}>AI Masterclass</h5>
-                            <p style={{ fontSize: '1rem', color: 'var(--secondary-purple)', marginBottom: '0.5rem' }}>
-                                collaboration with <strong>AiFi × GDG × OS Code</strong>
-                            </p>
                             <p style={{ color: '#aaa', marginBottom: '1rem', fontSize: '0.9rem' }}>⏰ Timings will be announced soon</p>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#e0e0e0', marginBottom: '1rem', fontSize: '0.85rem' }}>
                                 <MapPin size={14} color="var(--secondary-purple)" />
