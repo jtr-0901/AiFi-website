@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Users } from 'lucide-react';
 import harshImage from '../assets/harsh-hiremath.jpg';
 import zainImage from '../assets/zain-jawad.jpg';
+import harshithaImage from '../assets/harshitha-v.jpeg';
 import shreyaImage from '../assets/shreya-kotagiri.jpg';
 import kritikaImage from '../assets/kritika.jpg';
 import saiVarshiniImage from '../assets/sai-varshini.jpg';
@@ -31,6 +32,7 @@ const Team = () => {
     const coreMembers = [
         { role: 'President', name: 'Mr. Harsh Hiremath', image: harshImage },
         { role: 'Vice President', name: 'Mr. Zain Jawad', image: zainImage },
+        { role: 'Executive Secretary', name: 'Ms. Harshitha V', image: harshithaImage },
         { role: 'Secretary', name: 'Ms. Shreya Kotagiri', image: shreyaImage },
         { role: 'Joint Secretary', name: 'Ms. Kritika Mottadi', image: kritikaImage },
         { role: 'Head of Finance', name: 'Ms. Sai Varshini', image: saiVarshiniImage },

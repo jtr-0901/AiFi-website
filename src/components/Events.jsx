@@ -12,6 +12,82 @@ const Events = () => {
                 Upcoming Events
             </h2>
 
+            {/* Main AINEX Container */}
+            <motion.div
+                className="glass-card neon-border"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                style={{
+                    maxWidth: '1100px',
+                    margin: '0 auto 4rem auto',
+                    background: 'linear-gradient(180deg, rgba(138, 43, 226, 0.05) 0%, rgba(5, 5, 16, 0.9) 100%)'
+                }}
+            >
+                {/* Header */}
+                <div style={{ marginBottom: '2rem' }}>
+                    <Zap size={40} color="var(--secondary-purple)" style={{ filter: 'drop-shadow(0 0 10px var(--secondary-purple))' }} />
+                    <h3 style={{ fontSize: 'min(3.5rem, 10vw)', marginTop: '1rem', marginBottom: '0.5rem', color: '#fff' }}>AINEX REVA Edition</h3>
+                    <p style={{ fontSize: '1.2rem', color: 'var(--secondary-purple)' }}>AiFI, The AIML Club × Google Developer Group</p>
+
+                    <div style={{ marginTop: '1.5rem', color: '#ddd' }}>
+                        <p style={{ fontSize: '1.1rem', marginBottom: '1rem' }}>🧠 Build. Innovate. Disrupt with AI</p>
+                        <p style={{ marginBottom: '1rem' }}>Get ready to create powerful AI solutions using vision, voice, and real-world data — all in just 24 hours ⚡</p>
+                        
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', marginTop: '2rem', textAlign: 'left' }}>
+                            <div style={{ flex: '1 1 300px' }}>
+                                <h4 style={{ color: 'var(--secondary-purple)', marginBottom: '1rem' }}>Event Details</h4>
+                                <ul style={{ lineHeight: '1.8', paddingLeft: '0', listStyle: 'none' }}>
+                                    <li><Calendar size={16} style={{display: 'inline', marginRight: '8px', verticalAlign: 'middle'}} /><strong>Dates:</strong> April 10 - 11, 2025</li>
+                                    <li><MapPin size={16} style={{display: 'inline', marginRight: '8px', verticalAlign: 'middle'}} /><strong>Venue:</strong> To be announced, REVA University</li>
+                                    <li><Zap size={16} style={{display: 'inline', marginRight: '8px', verticalAlign: 'middle'}} /><strong>Duration:</strong> 24 Hours (Overnight hackathon)</li>
+                                    <li><Code2 size={16} style={{display: 'inline', marginRight: '8px', verticalAlign: 'middle'}} /><strong>Mode:</strong> Hybrid (Online Phase 1 / Offline Phase 2)</li>
+                                    <li>👥 <strong>Team Size:</strong> Min 2 - Max 4 members</li>
+                                    <li>💳 <strong>Registration Fee:</strong> ₹300 per team</li>
+                                </ul>
+                            </div>
+                            
+                            <div style={{ flex: '1 1 300px' }}>
+                                <h4 style={{ color: 'var(--secondary-purple)', marginBottom: '1rem' }}>What You'll Do</h4>
+                                <ul style={{ lineHeight: '1.8', paddingLeft: '0', listStyle: 'none' }}>
+                                    <li>⚡ Build real-time AI systems</li>
+                                    <li>🎤 Work with voice & gesture-based interaction</li>
+                                    <li>👁️ Use vision + sensor-driven intelligence</li>
+                                    <li>💡 Facilities: Internet, Power Backup, Discussion Room</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div style={{ marginTop: '2rem', textAlign: 'left', background: 'rgba(255, 255, 255, 0.03)', padding: '1.5rem', borderRadius: '10px', border: '1px solid rgba(138, 43, 226, 0.3)' }}>
+                            <h4 style={{ color: 'var(--secondary-purple)', marginBottom: '0.5rem' }}>Hackathon Objective</h4>
+                            <p style={{ lineHeight: '1.6', fontSize: '0.95rem' }}>
+                            AINEX – REVA Edition is to create a platform where students can design and develop an ambient AI system that seamlessly integrates into real-world environments, using voice, vision, gestures, and sensors to enable natural, hands-free human–AI interaction. The solution should intelligently perceive surroundings, make real-time decisions, and enhance everyday experiences without relying on traditional screens or manual input.
+                            </p>
+                            <p style={{ marginTop: '1rem', fontWeight: 'bold' }}>🚨 Limited slots | Bring your best ideas<br/>✨ Think. Build. Disrupt.</p>
+                        </div>
+                        
+                        <div style={{ marginTop: '2.5rem', marginBottom: '1rem' }}>
+                            <button
+                                onClick={() => window.open('https://vision.hack2skill.com/event/ainex-hack', '_blank')}
+                                style={{
+                                    background: 'var(--secondary-purple)',
+                                    color: '#fff',
+                                    border: 'none',
+                                    padding: '12px 35px',
+                                    fontSize: '1.1rem',
+                                    borderRadius: '25px',
+                                    fontWeight: 'bold',
+                                    cursor: 'pointer',
+                                    boxShadow: '0 0 20px rgba(138, 43, 226, 0.4)'
+                                }}
+                                className="hover-scale"
+                            >
+                                Register Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </motion.div>
+
             {/* Main AI-RENA 2.0 Container */}
             <motion.div
                 className="glass-card neon-border"
